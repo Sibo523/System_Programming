@@ -12,12 +12,10 @@ int isStrong(int x){
 }
 
 int isPrime(int n){
-      // Corner casem
-    if (n < 1)
+      // Corner case
+    if (n <= 1)
         return 0;
-    if (n == 1){
-        return 1;
-    }
+ 
     // Check from 2 to square root of n
     for (int i = 2; i*i <= n; i++)
         if (n % i == 0)

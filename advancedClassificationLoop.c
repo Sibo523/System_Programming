@@ -23,15 +23,15 @@ int my_log10(int x){
     return counter;
 }
 
-int isPalidrome(int n) { 
+int isPalindrome(int n) { 
     int from_the_back = 0; 
     int temp = n; 
     while (temp != 0) { 
         from_the_back = (from_the_back * 10) + (temp % 10); 
         temp = temp / 10; 
     } 
-    return 2;
-    // return from_the_back == n;
+    // return 2;
+    return from_the_back == n;
 } 
 
 int isArmstrong(int x){
