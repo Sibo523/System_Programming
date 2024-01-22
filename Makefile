@@ -9,25 +9,21 @@ FLAGS= -Wall -g
 
 .PHONY: all loops recursives recursived loopd clean
 
-all:loops recursives recursived loopd mains maindloop maindrec
+all:recursives loops  recursived loopd mains maindrec maindloop 
 
 loops: libclassloops.a
-# $(AR) -rcs  $(L)
 libclassloops.a: $(L)
 	$(AR) -rcs libclassloops.a $(L)
 
 recursives: libclassrec.a
-# $(AR) -rcs .a $(R)
-libclassrec.a: $(L)
-	$(AR) -rcs libclassrec.a $(L)
+libclassrec.a: $(R)
+	$(AR) -rcs libclassrec.a $(R)
 	
 recursived: libclassrec.so
-# $(CC) $(FLAGS) -shared -o libclassrec.so $(L)
-libclassrec.so: $(L)
-	$(CC) -shared -o libclassrec.so $(L)
+libclassrec.so: $(R)
+	$(CC) -shared -o libclassrec.so $(R)
 	
 loopd: libclassloops.so
-# $(CC) $(FLAGS) -shared -o libclassloops.so $(L)
 libclassloops.so: $(L)
 	$(CC) -shared -o libclassloops.so $(L)
 	

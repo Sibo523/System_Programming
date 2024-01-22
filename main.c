@@ -10,7 +10,7 @@ int main() {
 
     // Use functions from libraries
     printf("Is Palindrome: %d\n", isPalindrome(1234321));
-    // printf("Count of Digits: %d\n", countDigits(num));
+    printf("Count of D");
 
     return 0;
 }
