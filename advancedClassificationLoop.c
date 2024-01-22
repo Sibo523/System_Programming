@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "NumClass.h"
 int my_pow(int x, int y){
     if (y == 0){
         return 1;
@@ -41,5 +42,5 @@ int isArmstrong(int x){
         sum += my_pow(temp%10,cap);
         temp /= 10;
     }
-    return sum == x
+    return sum == x;
 }

@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "NumClass.h"
 int my_log10(int x){
     int counter = 0;
     while (x > 0){
