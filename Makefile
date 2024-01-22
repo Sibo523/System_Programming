@@ -15,19 +15,25 @@ libmylib.a: $(OBJECTS_LIB) #total
 	$(AR) -rcs libmylib.a $(OBJECTS_LIB)
 
 #//////////////////////////////////////////////
-progrec: $(OBJECTS_MAIN) libmylibrec.a #rec
+progrec: $(OBJECTS_MAIN) libclassrec.a #rec
 	$(CC) $(FLAGS) -o progrec $(OBJECTS_MAIN) -L. -lmylib
 
-libmylibrec.a: $(OBJECTS_rec) #rec 
-	$(AR) -rcs libmylibrec.a $(OBJECTS_rec)
+libclassrec.a: $(OBJECTS_rec) #rec static
+	$(AR) -rcs libclassrec.a $(OBJECTS_rec)
+
+libclassrec.so: $(OBJECTS_rec) #rec static
+	$(AR) -shared libclassrec.so $(OBJECTS_rec)
 
 #//////////////////////////////////////////////
-progloop: $(OBJECTS_MAIN) libmylibloop.a #loop
+progloop: $(OBJECTS_MAIN) libclassloops.a #loop
 	$(CC) $(FLAGS) -o progloop $(OBJECTS_MAIN) -L. -lmylib
 
-libmylibloop.a: $(OBJECTS_loop) #loop
-	$(AR) -rcs libmylibloop.a $(OBJECTS_loop)
-	
+libclassloops.a: $(OBJECTS_loop) #loop
+	$(AR) -rcs libclassloops.a $(OBJECTS_loop)
+libclassloops.so: $(OBJECTS_loop) #loop
+	$(AR) -shared libclassloops.so $(OBJECTS_loop)
+
+#////////////////////////////////////////////
 
 
 basicClassification.o: basicClassification.c NumClass.h
