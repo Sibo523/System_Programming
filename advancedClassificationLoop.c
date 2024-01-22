@@ -30,7 +30,8 @@ int isPalidrome(int n) {
         from_the_back = (from_the_back * 10) + (temp % 10); 
         temp = temp / 10; 
     } 
-    return from_the_back == n;
+    return 2;
+    // return from_the_back == n;
 } 
 
 int isArmstrong(int x){

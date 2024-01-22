@@ -11,23 +11,23 @@ all: progmains progloop progrec
 
 progmains: $(OBJECTS_MAIN) libmylib.a #total
 	$(CC) $(FLAGS) -o progmains $(OBJECTS_MAIN) -L. -lmylib
-
-
 libmylib.a: $(OBJECTS_LIB) #total
 	$(AR) -rcs libmylib.a $(OBJECTS_LIB)
 
-progloop: $(OBJECTS_MAIN) libmylibloop.a #loop
-	$(CC) $(FLAGS) -o progloop $(OBJECTS_MAIN) -L. -lmylib
-
+#//////////////////////////////////////////////
 progrec: $(OBJECTS_MAIN) libmylibrec.a #rec
 	$(CC) $(FLAGS) -o progrec $(OBJECTS_MAIN) -L. -lmylib
 
+libmylibrec.a: $(OBJECTS_rec) #rec 
+	$(AR) -rcs libmylibrec.a $(OBJECTS_rec)
+
+#//////////////////////////////////////////////
+progloop: $(OBJECTS_MAIN) libmylibloop.a #loop
+	$(CC) $(FLAGS) -o progloop $(OBJECTS_MAIN) -L. -lmylib
 
 libmylibloop.a: $(OBJECTS_loop) #loop
 	$(AR) -rcs libmylibloop.a $(OBJECTS_loop)
 	
-libmylibrec.a: $(OBJECTS_rec) #rec 
-	$(AR) -rcs libmylibrec.a $(OBJECTS_rec)
 
 
 basicClassification.o: basicClassification.c NumClass.h
