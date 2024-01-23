@@ -31,7 +31,7 @@ int a, b, i;
     for (i = a; i <= b; ++i)
     {
         if (isStrong(i))
-             printf(" %d", i);
+            printf(" %d", i);
     }
 
     

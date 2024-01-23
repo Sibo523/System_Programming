@@ -1,12 +1,10 @@
 CC=gcc
 AR=ar
 OBJECTS_MAIN=main.o
-OBJECTS_LIB= basicClassification.o advancedClassificationRecursion.o advancedClassificationLoop.o
 R= basicClassification.o advancedClassificationRecursion.o
 L= basicClassification.o advancedClassificationLoop.o
 FLAGS= -Wall -g
 f = fPIC
-.PHONY: all  clean
 # loops recursives recursived loopd
 all:recursives loops  recursived loopd mains maindrec maindloop 
 
@@ -47,6 +45,8 @@ advancedClassificationLoop.o: advancedClassificationLoop.c NumClass.h
 
 main.o: main.c NumClass.h 
 	$(CC) $(FLAGS) -c $<
+
+.PHONY: clean all  
 
 clean:
 	rm -f *.o *.so *.a mains maindloop maindrec
