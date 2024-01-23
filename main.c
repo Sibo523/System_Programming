@@ -33,8 +33,7 @@ int a, b, i;
         if (isStrong(i))
             printf(" %d", i);
     }
-
-    
+    printf("\n")
 
     return 0;
 }
