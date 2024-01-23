@@ -16,7 +16,7 @@ int my_pow(int x, int y){
         int half_y = y / 2;
         int half_pow = my_pow(x, half_y);
         return half_pow * half_pow;
-    }
+    }//
     else {
         return x * my_pow(x, y - 1);
     }

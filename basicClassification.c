@@ -18,9 +18,9 @@ int isPrime(int n){
         return 1;
     }
     // Check from 2 to square root of n
-    for (int i = 2; i*i <= n; i++)
+    for (int i = 2; i*i <= n; i++){
         if (n % i == 0)
             return 0;
- 
+    }
     return 1;
 }

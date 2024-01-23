@@ -19,6 +19,7 @@ int my_log10(int x){
     while (x >= 10){
         x /= 10;
         counter++;
+        //
     }
     return counter;
 }

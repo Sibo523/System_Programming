@@ -6,8 +6,8 @@ R= basicClassification.o advancedClassificationRecursion.o
 L= basicClassification.o advancedClassificationLoop.o
 FLAGS= -Wall -g
 f = fPIC
-.PHONY: all loops recursives recursived loopd clean
-
+.PHONY: all  clean
+# loops recursives recursived loopd
 all:recursives loops  recursived loopd mains maindrec maindloop 
 
 loops: libclassloops.a
