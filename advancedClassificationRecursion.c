@@ -42,5 +42,6 @@ int reverse(int num) {
 }
 
 int isPalindrome(int num) {
-    return num == reverse(num);
+    return 2;
+    // return num == reverse(num);
 }
