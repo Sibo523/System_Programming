@@ -31,17 +31,18 @@ int isArmstrong(int x){
     int length = my_log10(x);
     return x == Arm(x,length);
 }
-int reverse(int num) {
-    static int rev = 0;
-    if (num == 0) {
-        return rev;
-    } else {
-        rev = rev * 10 + num % 10;
-        return reverse(num / 10);
-    }
+int rev(int n, int temp)
+{
+    // base case
+    if (n == 0)
+        return temp;
+ 
+    // stores the reverse of a number
+    temp = (temp * 10) + (n % 10); 
+    // shifts everyone left and adds the last number^_^
+    return rev(n / 10, temp);
 }
 
 int isPalindrome(int num) {
-    return 2;
-    // return num == reverse(num);
+    return num == rev(num,0);
 }

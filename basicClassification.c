@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
 int isStrong(int x){
-    int arr [] = {1,2,6,24,120,720,5040,40320,362880};
+    int arr [] = {1,1,2,6,24,120,720,5040,40320,362880};
     int temp = x;
     int sum = 0;
     while (temp > 0){
@@ -10,12 +10,13 @@ int isStrong(int x){
     }
     return sum == x;
 }
-
 int isPrime(int n){
       // Corner case
-    if (n <= 1)
+    if (n < 1)
         return 0;
- 
+    if (n == 1){
+        return 1;
+    }
     // Check from 2 to square root of n
     for (int i = 2; i*i <= n; i++)
         if (n % i == 0)
