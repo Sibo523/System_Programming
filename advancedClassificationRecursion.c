@@ -21,17 +21,17 @@ int my_pow(int x, int y){
         return x * my_pow(x, y - 1);
     }
 }
-int Arm(int x, int length){
+int Arm(int x, int length){ // this is the recursive funtion
     if (x == 0){
         return 0;
     }
     return my_pow(x%10,length) + Arm(x/10,length);
 }
 int isArmstrong(int x){
-    int length = my_log10(x);
+    int length = my_log10(x); // just to get the length fo the number
     return x == Arm(x,length);
 }
-int rev(int n, int temp)
+int rev(int n, int temp) // if a number is palindrome then the reversed number is equal to the og
 {
     // base case
     if (n == 0)

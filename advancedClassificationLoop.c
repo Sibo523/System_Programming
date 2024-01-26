@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include "NumClass.h"
-int my_pow(int x, int y){
+int my_pow(int x, int y){ //pow function x ^ y 
     if (y == 0){
         return 1;
     }
@@ -14,7 +14,7 @@ int my_pow(int x, int y){
     }
 }
 
-int my_log10(int x){
+int my_log10(int x){// finds the length of a number
     int counter = 0;
     while (x >= 10){
         x /= 10;
@@ -39,7 +39,7 @@ int isArmstrong(int x){
     int cap = (int)my_log10(x)+1;
     int sum = 0;
 
-    while(temp){
+    while(temp){ // uterate through the sivitiot of the number
         sum += my_pow(temp%10,cap);
         temp /= 10;
     }
